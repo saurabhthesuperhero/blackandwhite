@@ -16,13 +16,12 @@ e1=Entry(window,font=('Lucida calligraphy',10))
 e1.pack()
 b1=Button(window,text="Go",font=('Times',16),background='khaki4',fg='white',command=lambda: code(e1.get()))
 b1.pack()
+
 t1=Text(height=4,font=('Comic sans ms',18),bg='sienna4',fg='white')
 t1.pack(fill=X)
-l3=Label(window,text='''"Every great developer you know
-got there by solving problems 
-they were unqualified to solve until 
-they actually did it."
-  - Patrick McKenzie''',font=('Comic sans ms',21))
+l3=Label(window,text='''"“Talk is cheap. Show me the code.” 
+"
+ ― Linus Torvalds''',font=('Comic sans ms',21))
 l3.pack()
 #code
 def code(path):
@@ -38,13 +37,7 @@ def code(path):
 		bw.save("result_bw.png")
 		t1.delete(1.0,END)
 		t1.insert(END,"File Converted Successfully")
-	
-		
-		try:
-			os.mkdir("MYFolder")
-			os.chdir("MYFolder")
-		except FileExistsError:
-			os.chdir("MYFolder")
+
 			
 	except FileNotFoundError:
 		t1.delete(1.0,END)
